@@ -46,7 +46,7 @@ HotKeySet ("!p","Pokemon")
 HotKeySet ("!a","Add")
 
 
-MsgBox (1,"Osumon","- Ctrl+Alt+O to change your keys (use https://www.autoitscript.com/autoit3/docs/libfunctions/_IsPressed.htm)"&@CRLF&"- Ctrl+Q to quit"&@CRLF&"- Alt+P to see your Pokémon"&@crlf&"- Alt+A to catch the selected Pokémon")
+MsgBox (1,"Osumon","- Ctrl+Alt+O to change your keys (use Keys.txt)"&@CRLF&"- Ctrl+Q to quit"&@CRLF&"- Alt+P to see your Pokémon"&@crlf&"- Alt+A to catch the selected Pokémon")
 ;https://www.autoitscript.fr/autoit3/docs/libfunctions/_IsPressed.htm
 
 Call ("Pokedex")
