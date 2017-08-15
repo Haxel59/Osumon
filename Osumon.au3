@@ -32,7 +32,7 @@ $Exist=FileExists ($MonData)
 
 If $exist=0 Then
    _FileCreate ($MonData)
-   FileWriteLine ($MonData, "Pokemon|Shiny|Obscur"&@CRLF)
+   FileWriteLine ($MonData, "Pokemon|Shiny|Shadow"&@CRLF)
 EndIf
 
 
