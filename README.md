@@ -20,3 +20,10 @@ Alt+P opens/closes a window with the Pokémon you caught using Alt+A
 
 Ctrl+Q exit the game and save your encounters in a .txt in the same folder as the game (You can edit it manually if you want to but tbh I don't care)
 
+# Known issues
+Maybe i'll fix them one day.
+
+You can catch multiple times the same Pokémon
+You can't delete Pokémon of the "Caught list" without editing the save file
+The game might crash if you have a VERY high number of Pokémon in the "encounter" list, be sure to relaunch the game sometimes
+
