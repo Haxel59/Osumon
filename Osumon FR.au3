@@ -44,7 +44,7 @@ HotKeySet ("!a","Add")
 ;HotKeySet ($K2,"Encounter")
 
 
-MsgBox (1,"Osumon","- Ctrl+Alt+O pour ouvrir les options"&@CRLF&"- Ctrl+Q pour quitter"&@CRLF&"- Alt+P pour voir Pokémon capturés (elle apparaitra audessus de la boite des rencontres)"&@crlf&"- Alt+A pour ajouter le Pokémon selectionné a la liste des Pokémon capturés"&@crlf&"- Pour les touches dans les options utilisez https://www.autoitscript.fr/autoit3/docs/libfunctions/_IsPressed.htm par ce que flem de l'intégrer.")
+MsgBox (1,"Osumon","- Ctrl+Alt+O pour ouvrir les options"&@CRLF&"- Ctrl+Q pour quitter"&@CRLF&"- Alt+P pour voir Pokémon capturés (elle apparaitra audessus de la boite des rencontres)"&@crlf&"- Alt+A pour ajouter le Pokémon selectionné a la liste des Pokémon capturés"&@crlf&"- Pour les touches dans les options utilisez Keys.txt)
 ;https://www.autoitscript.fr/autoit3/docs/libfunctions/_IsPressed.htm
 
 Call ("Pokedex")
