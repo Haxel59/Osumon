@@ -7,7 +7,7 @@ When you encounter a Pokémon that you want to keep for any reason, you can catc
 # How to play
 
 You "just" have to tap one of the two keys you binded in the options to launch an encounter.
-You can play it as a game (bad idea but why not) but you can also have it running with osu! and bind the same keys in osu! and in Osumon and then, when you will click a circle, an encounter will be launched
+You can play it as a game (bad idea but why not) but you can also have it running with osu! (not ran in administrator mode) and bind the same keys in osu! and in Osumon and then, when you will click a circle, an encounter will be launched
 
 # Commands
 
