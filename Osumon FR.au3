@@ -44,7 +44,7 @@ HotKeySet ("!a","Add")
 ;HotKeySet ($K2,"Encounter")
 
 
-MsgBox (1,"Osumon","- Ctrl+Alt+O pour ouvrir les options"&@CRLF&"- Ctrl+Q pour quitter"&@CRLF&"- Alt+P pour voir Pokémon capturés (elle apparaitra audessus de la boite des rencontres)"&@crlf&"- Alt+A pour ajouter le Pokémon selectionné a la liste des Pokémon capturés"&@crlf&"- Pour les touches dans les options utilisez Keys.txt)
+MsgBox (1,"Osumon","- Ctrl+Alt+O pour ouvrir les options"&@CRLF&"- Ctrl+Q pour quitter"&@CRLF&"- Alt+P pour voir Pokémon capturés (elle apparaitra audessus de la boite des rencontres)"&@crlf&"- Alt+A pour ajouter le Pokémon selectionné a la liste des Pokémon capturés"&@crlf&"- Pour les touches dans les options utilisez Keys.txt")
 ;https://www.autoitscript.fr/autoit3/docs/libfunctions/_IsPressed.htm
 
 Call ("Pokedex")
@@ -79,6 +79,7 @@ While 1
 	  $Key2Flag=0
    EndIf
 WEnd
+
 
 
 Func Add ()
@@ -189,8 +190,7 @@ Func Encounter ()
    ;GUICtrlCreateListView
    If $shiny="*" and $dark<>"¤" Then
 	  GUICtrlSetBkColor(-1, 0xFFFF00)
-	  $Shiny=FileReadLine ($data,4)
-	  _FileWriteToLine ($data,4,$Shiny+1,True)
+	  _FileWriteToLine ($data,4,FileReadLine ($data,4)+1,True)
 	  GUICtrlSetData ($ShinyLab,$Shiny+1)
    EndIf
 
@@ -203,7 +203,30 @@ Func Encounter ()
 
    If $shiny="*" And $dark="¤" Then
 	  GUICtrlSetBkColor(-1,0x888800)
+	  _FileWriteToLine ($data,4,FileReadLine ($data,4)+1,True)
+	  GUICtrlSetData ($ShinyLab,FileReadLine ($data,4))
+	  _FileWriteToLine ($data,5,FileReadLine ($data,5)+1,True)
+	  GUICtrlSetData ($DarkLab,FileReadLine ($data,5))
    EndIf
+
+   If $shiny="*" Or $dark="¤" Then
+	  FileWriteLine ("MonData.txt",$Specie&"|"&$Shiny&"|"&$dark)
+
+	  If $IsPokemon=1 Then
+		 GUICtrlCreateListViewItem ($Specie&"|"&$Shiny&"|"&$dark,$hlistview2)
+
+		 If $Shiny="*" Then
+			GUICtrlSetBkColor(-1, 0xFFFF00)
+		 EndIf
+
+		 If $Dark="¤" Then
+			GUICtrlSetBkColor(-1, 0xAAAAAA)
+		 EndIf
+
+		 If $Shiny="*" And $Dark="¤" Then GUICtrlSetBkColor(-1, 0x888800)
+	  EndIf
+   EndIf
+
 
    ;ConsoleWrite ($calc&@crlf)
    _GUICtrlListView_EnsureVisible ( $hlistview, $calc , True )
